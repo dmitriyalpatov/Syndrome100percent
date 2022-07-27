@@ -11,6 +11,27 @@ public class StatisticsService {
         return current_max;
     }
 
+    public int totalSales(int[] sales) {
+        return 0;
+    }
 
+    public int averageAmountOfSalesPerMonth(int[] sales) {
+        return 0;
+    }
 
+    public int maxSales(int[] sales) {
+        return 0;
+    }
+
+    public int minSales(int[] sales) {
+        return 0;
+    }
+
+    public int underAverageSales(int[] sales) {
+        return 0;
+    }
+
+    public int overAverageSales(int[] sales){
+        return  0;
+    }
 }
