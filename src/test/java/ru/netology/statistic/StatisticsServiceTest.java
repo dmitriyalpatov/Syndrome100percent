@@ -11,10 +11,10 @@ public class StatisticsServiceTest {
     @Test
     void CalculateTotalSales() {
         StatisticsService service = new StatisticsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 180;
+        long[] sales = {180, 15,179, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 180;
 
-        int actual = service.totalSales(sales);
+        long actual = service.findMax(sales);
 
         assertEquals(expected, actual);
 
@@ -22,10 +22,10 @@ public class StatisticsServiceTest {
     @Test
     void CalculateAverageSales() {
         StatisticsService service = new StatisticsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 15;
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 15, 18};
+        long expected = 20;
 
-        int actual = service.averageAmountOfSalesPerMonth(sales);
+        long actual = service.findMax(sales);
 
         assertEquals(expected, actual);
     }
@@ -33,45 +33,14 @@ public class StatisticsServiceTest {
     @Test
     void MonthWithMaximumSale() {
         StatisticsService service = new StatisticsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 8;
+        long[] sales = {8, 22, 13, 15, 17, 20, 19, 20, 7, 14, 14, 21};
+        long expected = 22;
 
-        int actual = service.maxSales(sales);
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void  MonthWithAMinimumSale() {
-        StatisticsService service = new StatisticsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 9;
-
-        int actual = service.minSales(sales);
+        long actual = service.findMax(sales);
 
         assertEquals(expected, actual);
     }
 
-    @Test
-    void BelowAverageSales() {
-        StatisticsService service = new StatisticsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 5;
 
-        int actual = service.underAverageSales(sales);
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void ExceedingTheAverageSale() {
-        StatisticsService service = new StatisticsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 5;
-
-        int actual = service.overAverageSales(sales);
-
-        assertEquals(expected, actual);
-    }
 
 }
